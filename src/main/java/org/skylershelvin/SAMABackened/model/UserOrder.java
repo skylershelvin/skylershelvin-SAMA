@@ -19,7 +19,7 @@ public class UserOrder {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
-    private LocalUser User;
+    private LocalUser user;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "address_id", nullable = false)

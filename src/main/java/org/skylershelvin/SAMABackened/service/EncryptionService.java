@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class EncryptionService {
+public class  EncryptionService {
     // increasing the layers of security
     @Value("${encryption.salt.rounds}")
     private int saltRounds;

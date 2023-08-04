@@ -5,11 +5,13 @@ import org.skylershelvin.SAMABackened.API.model.LoginBody;
 import org.skylershelvin.SAMABackened.API.model.LoginResponse;
 import org.skylershelvin.SAMABackened.API.model.RegistrationBody;
 import org.skylershelvin.SAMABackened.exception.UserAlreadyExistException;
+import org.skylershelvin.SAMABackened.model.LocalUser;
 import org.skylershelvin.SAMABackened.service.JWTService;
 import org.skylershelvin.SAMABackened.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -45,4 +47,12 @@ public class AuthenticationController {
             return ResponseEntity.ok(response);
         }
     }
+    /* reduce boilerplate code by using @AutheniticationPrinciple which will
+    * go into the authentication principle and cast it to the User
+     */
+    @GetMapping("/me")
+    public LocalUser getLoggedInUserProfile(@AuthenticationPrincipal LocalUser user){
+        return user;
+    }
 }
+

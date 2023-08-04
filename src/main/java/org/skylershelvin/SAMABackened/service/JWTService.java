@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
-
+/*
+responsible for handling the encoded strings to authenticate users; makes it unique to each user
+ */
 @Service
 public class JWTService {
     //@Autowired
@@ -51,7 +53,10 @@ public class JWTService {
     }
 
 
-
+public String getUsername(String token){
+        //getting the username out of the token and returns as a string
+        return JWT.decode(token).getClaim(USERNAME_KEY).asString();
+}
 
 }
 
