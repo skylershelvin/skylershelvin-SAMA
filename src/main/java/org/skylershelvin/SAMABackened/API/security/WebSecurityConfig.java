@@ -23,7 +23,8 @@ public class WebSecurityConfig {
         http.addFilterBefore(jwtRequestFilter, AuthorizationFilter.class);
         http.authorizeHttpRequests()
                 // all pages I want to access without authentication
-                .requestMatchers("/product", "/auth/register", "/auth/login").permitAll()
+                .requestMatchers("/product", "/auth/register", "/auth/login",
+                        "/auth/forgot", "/auth/reset", "/websocket", "/websocket/**").permitAll()
                 .anyRequest().authenticated();
         return http.build();
         }

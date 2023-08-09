@@ -6,6 +6,7 @@ import org.skylershelvin.SAMABackened.exception.UserAlreadyExistException;
 import org.skylershelvin.SAMABackened.model.LocalUser;
 import org.skylershelvin.SAMABackened.model.dao.LocalUserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -57,5 +58,8 @@ public class UserService {
           }
         }
         return null;
+    }
+    public boolean userHasPermissionToUser(LocalUser user, Long id ){
+        return user.getId() == id;
     }
 }
