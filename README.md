@@ -11,7 +11,7 @@
 <!-- Getting Started Section -->
 ## Getting Started
 
-Follow these simple steps to get started with AwesomeProject:
+Follow these simple steps to get started with SAMA Project:
 
 1. **Clone the Repository**: `git clone (https://github.com/skylershelvin/skylershelvin-SAMA.git)`
 
